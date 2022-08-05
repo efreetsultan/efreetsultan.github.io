@@ -1,0 +1,243 @@
+body,
+html {
+    position: relative;
+    height: 100%;
+}
+
+.body-bgrnd {
+    height: 98%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+h4,
+h6,
+p,
+h1,
+img {
+    margin: unset;
+    padding: unset;
+}
+
+#page-container {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    align-items: center;
+}
+
+/* --------------CARD ELEMENTS------------------ */
+
+.card {
+    height: fit-content;
+    width: fit-content;
+    text-align: center;
+    backdrop-filter: blur(20px);
+    border: 10px solid rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    box-shadow: 20px 20px 22px rgba(0, 0, 0, 0.2);
+    font-family: 'Poppins', sans-serif;
+    background-color: rgba(20, 20, 20, 0.5);
+    color: white;
+}
+
+#card-city {
+    letter-spacing: 4px;
+    font-size: 27px;
+    text-align: center;
+    margin-top: 32px;
+    margin-bottom: 5px;
+    text-transform: capitalize;
+    margin-right: 16px;
+    margin-left: 16px;
+}
+
+#card-time {
+    text-align: center;
+    letter-spacing: 5px;
+    font-weight: 300;
+}
+
+#card-degree {
+    letter-spacing: 2px;
+    text-align: center;
+    font-size: 50px;
+    font-weight: 300;
+    padding-left: 19px;
+    height: 60px;
+
+}
+
+#card-weather {
+    font-weight: lighter;
+}
+
+#card-icon {
+    margin-bottom: -5px
+}
+
+#card-feelslike {
+    font-weight: lighter;
+    margin-bottom: 16px;
+    font-size: 13px;
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: auto auto;
+    margin-bottom: 12px;
+}
+
+.card-details {
+    text-align: center;
+    font-size: 13px;
+    letter-spacing: 1px;
+    font-weight: lighter;
+}
+
+.card-details>p {
+    font-weight: normal;
+}
+
+#card-max {
+    font-weight: lighter;
+}
+
+#card-min {
+    font-weight: lighter;
+}
+
+.card-container-2 {
+    display: grid;
+    grid-template-columns: 31% 13% 30% 33%;
+    margin: 0px 30px 20px 30px;
+    grid-column-gap: 6px;
+    align-items: center;
+    justify-content: center;
+}
+
+#button-add-favorite {
+    background-color: rgb(255, 248, 220);
+    width: 100%;
+    opacity: 0.9;
+    height: 44px;
+    border: 0px;
+}
+
+#button-add-favorite:hover {
+    background-color: rgb(255, 235, 154);
+}
+
+#button-add-favorite:active {
+    background-color: rgb(255, 226, 109);
+}
+
+/* -------------INPUTS--------------- */
+
+#input-city {
+    width: 100%;
+    opacity: 0.9;
+    height: 44px;
+    border: 0px;
+    padding: 10px;
+    color: black;
+    background-color: white;
+}
+
+/*the container must be positioned relative:*/
+.autocomplete {
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+}
+
+.autocomplete-items {
+    position: absolute;
+    border: 1px solid #d4d4d4;
+    border-bottom: none;
+    border-top: none;
+    z-index: 99;
+    /*position the autocomplete items to be the same width as the container:*/
+    top: 100%;
+    left: 0;
+    right: 0;
+}
+
+.autocomplete-items div {
+    padding: 10px;
+    cursor: pointer;
+    background-color: #fff;
+    border-bottom: 1px solid #d4d4d4;
+    color: rgb(163, 144, 69);
+}
+
+/*when hovering an item:*/
+.autocomplete-items div:hover {
+    background-color: rgb(255, 235, 154);
+}
+
+/*when navigating through the items using the arrow keys:*/
+.autocomplete-active {
+    background-color: rgb(163, 144, 69) !important;
+    color: white;
+}
+
+#showFavorites {
+    height: fit-content;
+}
+
+/* --------------------SPINNER------------------------ */
+
+#spinner:not([hidden]) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#spinner::after {
+    content: "";
+    width: 80px;
+    height: 80px;
+    border: 2px solid #f3f3f3;
+    border-top: 3px solid rgb(163, 144, 69);
+    border-radius: 100%;
+    will-change: transform;
+    animation: spin 1s infinite linear
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* -------------------FAVORITES------------------------- */
+#add-to-fav {
+    margin: 0px;
+}
+ul {
+    background-color: rgb(163, 144, 69);
+    color: black;
+    width: 100%;
+    padding: 0px 0px 0px 0px;
+    margin: 0px;
+}
+
+#add-to-fav > li {
+    list-style-type: none;
+    background-color: rgb(163, 144, 69);
+    width: 100%;
+    opacity: 0.9;
+    height: 44px;
+    border: 0px;
+}
